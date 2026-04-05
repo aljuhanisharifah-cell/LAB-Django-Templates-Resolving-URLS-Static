@@ -1,0 +1,30 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="search-container">
+    <img src="{% static 'images/google-logo.png' %}" alt="Google" class="logo">
+    
+    <form action="https://www.google.com/search" method="GET" style="display: flex; flex-direction: column; align-items: center; width: 100%;">
+        <div class="search-box">
+            <span class="material-icons" style="color: #9aa0a6;">search</span>
+            
+            <input type="text" name="q" class="search-input" autofocus required>
+            
+            <div class="search-icons" style="display: flex; align-items: center; gap: 15px;">
+                <img src="{% static 'images/mircophone.png' %}" alt="Voice Search" style="width: 24px; cursor: pointer;">
+                <img src="{% static 'images/camera.png' %}" alt="Google Lens" style="width: 24px; cursor: pointer;">
+            </div>
+        </div>
+        
+        <div class="buttons-group">
+            <button type="submit" class="btn">Google Search</button>
+            <button type="button" class="btn">I'm Feeling Lucky</button>
+        </div>
+    </form>
+    
+    <div class="lang-info" style="margin-top: 25px; font-size: 13px;">
+        Google offered in: <a href="#" style="color: #1a0dab; text-decoration: none;">العربية</a>
+    </div>
+</div>
+{% endblock %}
