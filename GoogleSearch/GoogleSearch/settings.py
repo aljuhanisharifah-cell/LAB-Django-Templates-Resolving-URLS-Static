@@ -6,7 +6,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 SECRET_KEY = 'django-insecure--pjdj6zn+0b323ggl+5w$i)_yi_*66_2s(5*0alr@b6*8$z2^t'
+
 DEBUG = True
+
 ALLOWED_HOSTS = []
 
 
@@ -17,7 +19,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'main',
+    'main', 
 ]
 
 MIDDLEWARE = [
@@ -35,7 +37,8 @@ ROOT_URLCONF = 'GoogleSearch.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+      
+        'DIRS': [os.path.join(BASE_DIR, 'main', 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -66,9 +69,8 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-
 STATICFILES_DIRS = [
-    BASE_DIR / "main" / "static",
+    os.path.join(BASE_DIR, "main", "static"),
 ]
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
